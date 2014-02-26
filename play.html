@@ -1,0 +1,44 @@
+﻿<!DOCTYPE   >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TicTacToe</title>
+    <link href="external/bootstrap.css" rel="stylesheet" />
+    <link href="play.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="game-selection">
+            <label class="game-label">Select board type:</label>
+            <select data-bind="options: gameType, optionsText: 'type', optionsValue: 'id', value: selectedType"></select>
+        </div>
+        <div class="row">
+            <div data-bind="foreach: cellSetup, css: { 'game-container': containerClass() == 'small', 'game-containerBig': containerClass() == 'big'}">
+
+                <div class="box" data-bind="event: { click: function(){ $root.boxClick(id, weight); }}">
+                    <span class="box-text"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <a class="btn btn-small btn-success" data-bind="event: { click: function() { resetGame(0); setup3x3(); selectedType('1');}} ">Start new game</a>
+            <label>Rules:</label>
+            <ol>
+                <li>X always goes first.</li>
+                <li>Players alternate placing Xs and Os on the board until either 
+                    <br />
+                    (a) one player has four in a row, horizontally, vertically or diagonally; or
+                    <br />
+                    (b) all 16 squares are filled.</li>
+                <li>If a player is able to draw four Xs or four Os in a row, that player wins.</li>
+                <li>If all 16 squares are filled and neither player has four in a row, the game is a draw.</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="external/jquery-1.7.1.min.js"></script>
+    <script src="external/knockout-2.1.0.js"></script>
+    <script src="playViewModel.js"></script>
+
+</body>
+</html>

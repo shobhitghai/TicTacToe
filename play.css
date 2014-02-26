@@ -1,0 +1,39 @@
+﻿.box {
+    width: 40px;
+    height: 40px;
+    border: black solid 1px;
+    margin: 0.1px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#game-selection {
+    margin-top: 70px;
+}
+
+.game-label {
+    display: inline;    
+}
+
+.game-container {
+    margin: 20px;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+}
+
+.game-containerBig {
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+}
+
+.box-text {
+    position: absolute;
+    margin: 15px;
+}
+
+.btn {
+    margin: 10px;
+}
